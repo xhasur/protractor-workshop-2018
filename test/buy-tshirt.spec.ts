@@ -1,4 +1,4 @@
-import { $, browser } from 'protractor';
+import { browser } from 'protractor';
 import {
   MenuContentPage,
   ProductListPage,
@@ -23,9 +23,6 @@ describe('Buy a t-shirt', () => {
   const paymentStepPage: PaymentStepPage = new PaymentStepPage();
   const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
   const orderResumePage: OrderResumePage = new OrderResumePage();
-  beforeEach(() => {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
-  });
 
   it('then should be bought a t-shirt', async () => {
     await browser.get('http://automationpractice.com/');
@@ -39,7 +36,7 @@ describe('Buy a t-shirt', () => {
     await summaryStepPage.proceedToCheckout();
     await (browser.sleep(3000));
     await signInStepPage.login('aperdomobo@gmail.com', 'WorkshopProtractor');
-    await (browser.sleep(10000));
+    await (browser.sleep(3000));
 
     await addressStepPage.proceedToCheckout();
     await (browser.sleep(3000));
