@@ -7,3 +7,4 @@ export { AddressStepPage } from './address-step.page';
 export { ShippingStepPage } from './shipping-step.page';
 export { PaymentStepPage } from './payment-step.page';
 export { BankPaymentPage } from './bank-payment.page';
+export { OrderResumePage } from './order-resume.page';
