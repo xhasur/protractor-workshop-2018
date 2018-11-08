@@ -33,11 +33,8 @@ describe('Buy a t-shirt', () => {
     await signInStepPage.login('aperdomobo@gmail.com', 'WorkshopProtractor');
     await addressStepPage.proceedToCheckout();
     await shippingStepPage.acceptAndContinue();
-    await (browser.sleep(3000));
     await paymentStepPage.payByBankWire();
-    await (browser.sleep(3000));
     await bankPaymentPage.confirmOrder();
-    await (browser.sleep(3000));
     await expect(orderResumePage.getOrderTitle())
       .toBe('Your order on My Store is complete.');
   });
