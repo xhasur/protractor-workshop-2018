@@ -28,16 +28,19 @@ describe('Given a shopping page', () => {
       await productAddedModalPage.proceedToCheckout();
       await summaryStepPage.proceedToCheckout();
     });
+
     describe('and login to the application', () => {
       beforeAll(async () => {
         const signInStepPage: SignInStepPage = new SignInStepPage();
         await signInStepPage.login('aperdomobo@gmail.com', 'WorkshopProtractor');
       });
+
       describe('and select default address', () => {
         beforeAll(async () => {
           const addressStepPage: AddressStepPage = new AddressStepPage();
           await addressStepPage.proceedToCheckout();
         });
+
         describe('and pay to the bank', () => {
           beforeAll(async () => {
             const shippingStepPage: ShippingStepPage = new ShippingStepPage();
