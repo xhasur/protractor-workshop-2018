@@ -49,9 +49,8 @@ describe('Given a shopping page', () => {
             await shippingStepPage.acceptAndContinue();
             await paymentStepPage.payByBankWire();
             await bankPaymentPage.confirmOrder();
-
-
           });
+
           it('then should be bought a t-shirt', async () => {
             const orderResumePage: OrderResumePage = new OrderResumePage();
             await expect(orderResumePage.getOrderTitle())
