@@ -9,6 +9,13 @@ export const config: Config = {
   jasmineNodeOpts: {
     defaultTimeoutInterval: 120000
   },
+  capabilities: {
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ['disable-infobars=true', '--window-size=800,600'],
+      prefs: { credentials_enable_service: false }
+    }
+  },
   onPrepare: () => {
     browser.ignoreSynchronization = true;
     browser.manage().timeouts().implicitlyWait(0);
