@@ -46,15 +46,16 @@ describe('Given a shopping page', () => {
             const shippingStepPage: ShippingStepPage = new ShippingStepPage();
             const paymentStepPage: PaymentStepPage = new PaymentStepPage();
             const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
-            const orderResumePage: OrderResumePage = new OrderResumePage();
             await shippingStepPage.acceptAndContinue();
             await paymentStepPage.payByBankWire();
             await bankPaymentPage.confirmOrder();
 
-            it('then should be bought a t-shirt', async () => {
-              await expect(orderResumePage.getOrderTitle())
-                .toBe('Your order on My Store is complete.');
-            });
+
+          });
+          it('then should be bought a t-shirt', async () => {
+            const orderResumePage: OrderResumePage = new OrderResumePage();
+            await expect(orderResumePage.getOrderTitle())
+              .toBe('Your order on My Store is complete.');
           });
         });
       });
